@@ -57,7 +57,7 @@ def multicast_province(config_file):
     filename = os.path.basename(config_file)
     province, operator = filename.split('_')[:2]
     print(f"{'='*25}\n   获取: {province}{operator}ip_port\n{'='*25}")
-    configs = set(read_config(config_file))
+    configs = sorted(set(read_config(config_file)))
     print(f"读取完成，共需扫描 {len(configs)}组\n")
     all_ip_ports = []
     for ip, port, url_end in configs:
